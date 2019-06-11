@@ -1,0 +1,47 @@
+<section id='myAccount' ng-controller='accountController'>
+    <div class='container'  ng-init='myAccount()' >
+        <div class='panel panel-info'>
+            <div class='panel-heading'><h3 class='panel-title'>User Info</h3></div>
+            <div class='panel-body'>
+        <table class='table table-trip'>
+            <tbody ng-model='userInfo'>
+                <tr>
+                    <td>Username :</td>
+                    <td>{{userInfo.name}}</td>
+                </tr>
+                <tr>
+                    <td>Email :</td>
+                    <td>{{userInfo.email}}</td>
+                </tr>
+                <tr>
+                    <td>Address :</td>
+                    <td>{{userInfo.addLine1}}{{userInfo.addLine2}} {{userInfo.city}} {{userInfo.state}} {{userInfo.country}}</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+    </div>
+        
+     <div class='panel panel-warning'>
+        <div class='panel-heading'><h3 class='panel-title'>Shopping You did with Us!!!</h3></div>
+        <div class='panel-body'>
+            <table class='table table-stripped'>
+                            <thead>
+                               <th>Product Name</th>
+							   <th>Price</th>
+							   <th>Quantity</th>
+                               <th>Total</th>
+                            </thead>
+                            <tbody>
+                               <tr ng-repeat="final in orders">
+                                   <td>{{final.productName}}</td>
+                                    <td>&#x20B9;{{final.price}}</td>
+                                    <td>{{final.count}}</td>
+                                    <td>&#x20B9;{{final.count*final.price}}</td>
+                                </tr>
+                            </tbody>
+            </table>
+        </div>
+    </div>
+ </div>
+</section>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app='ecomApp' lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title> MY-SHOPPIE</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://whiteballcs.co.za/sm/Material%20Icons_e547(0)_256.png" /> 
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    
+
+	
+</head><!--/head-->
+<style>
+body {
+    background-image: url(".jpg");
+	 background-size: 1900px 1980px;
+    background-repeat: no-repeat;
+}
+.crop {
+    height: 180px;
+    width: 400px;
+    overflow: hidden;
+}
+.crop img {
+    height: auto;
+    width: 100%;
+}
+</style>
+<body>
+	<header id="header"><!--header-->
+		<!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="MYSHOPPIE(52acf2)1.png" alt="" /></a>
+						</div>
+						</div>
+						<!--writing two divs-->
+						
+					<div  id="Login" class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								
+								
+								
+								<li><a href="#cart"><i class="fa fa-shopping-cart" ></i>cart : {{current.length}}</a></li>
+								<li ><a href="#login"><i class="fa fa-lock"></i>Login/Signup</a></li>
+					
+							</ul>
+						</div>
+						
+					</div>
+					
+					<!--second div start-->
+					
+					<div  id="Logout"  class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+									<li   id="userName" ng-model="Name"><a  id="userName" href="#"></a></li>
+								
+                                <li ng-controller='accountController'><a   href="#Account" ><i class="fa fa-user" ></i>My Account</a></li>
+								
+							<li><a href="#cart"><i class="fa fa-shopping-cart" ></i>cart : {{current.length}}</a></li>
+								
+								
+								<li id="Log"  onclick="logout()" ><a href="#"><i class="fa fa-lock"></i> Logout</a></li>
+								
+						
+							</ul>
+						</div>
+					</div>
+				
+					<div class="col-sm-3" ng-controller="productController">
+						<div class="search_box pull-right">
+							<input type='text' placeholder='search here' ng-model='searchItem'>
+						<button class='btn btn-info'  ng-click='search()'>Search</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+	
+			
+		</div><!--/header-middle-->
+	
+	
+	</header><!--/header-->
+	
+		
+	
+	  
+			
+<div ng-app="ecomApp" >
+				<ng-view></ng-view>
+			  </div>
+
+		
+			 
+	
+				
+				
+					
+					
+					
+					
+					
+					
+					
+	
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+  
+	<script src="ngStorage.min.js"></script>
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+	   <script src="contoller.js"></script>
+	   <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;">
+<i class="fa fa-angle-up"></i>
+</a>
+</body>
+</html>

@@ -1,0 +1,42 @@
+create data/db folder in c drive
+
+
+
+//update many
+ db.product.updateMany({}, {$set: {"quantity":10}})
+
+
+//export
+mongoexport --db products --collection product --out D:\DataBase_quantity.json
+
+
+//import
+mongoimport --db products --collection product --drop --file D:\e-COMMERCE files\DataF.json
+
+
+mongoimport -d products -c product --drop D:\DataBase.json
+
+
+
+
+TO RETRIVE THE PARTICULAR CATEGORY
+
+db.product.find({subcategory:'AccessoriesComputer'}).pretty()
+
+TO UPDATE AND ADD ANY FIELD IN DB
+
+db.product.updateMany({},{$set:{quantity:100}})
+
+TO HIDE PARTICULAR FIELD IN COLLECTION
+
+db.product.find({subcategory:'AccessoriesComputer'},{description:false}).pretty()
+
+db.product.update({productName:'SanDisk Connect Wireless Stick 128 GB Pen Drive (Black)'},{$set:{imgPath:'images/51q3kadaZ9L.jpg'}})
+
+db.product.update({productName:'SanDisk Connect Wireless Stick 128 GB Pen Drive (Black)'},{$set:{imgPath:'D:/our trails/trail1 – Copy/Eshopper/ecom/public/images/accessories/computer/ HP1TBWiredExternalHardDiskDrive (Grey).jpeg'}})
+
+db.product.update({productName:'SanDisk Connect Wireless Stick 128 GB Pen Drive (Black)'},{$set:{imgPath:'images/accessories/computer/HP1TBWiredExternalHardDiskDrive (Grey).jpeg'}})
+
+mongoexport --db products --collection product --out Data.json
+
+mongoimport -- db products --collection product --drop --file ~/downloads/primer-dataset.json 

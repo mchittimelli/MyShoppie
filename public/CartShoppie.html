@@ -1,0 +1,92 @@
+	<section id="cart_items" ng-controller='productController'>
+		<div class="container">
+			
+			<div class="panel panel-primary">
+                <div class='panel-heading'><h3 class='panel-title'>Cart Details</h3>
+                </div>
+                <div class='panel-body'>
+			
+				<table class="table table-strip" >
+				
+					
+                        <thead id="cart">
+						<tr>
+							
+							<th>Product Name</th>
+							<th>Price</th>
+							<th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+						</tr>
+					</thead>
+					<tbody  ng-init="assignCurrent()">
+						
+                        <tr ng-repeat="det in current">
+                            
+							
+							<td>{{det.productName}}</td>
+							<td>&#x20B9;{{det.price}}</td>
+							<td><input type='number' min='1' max='{{det.quantity}}' ng-model='quantityOrdered' onkeydown='return false'></td>
+							<td >&#x20B9; {{det.price*quantityOrdered}}</td>
+							<td><button class='btn-btn primary' id='deleteButton' ng-click='remove(det.productName)'>Delete <span class="glyphicon glyphicon-trash" ></span></button></td>
+                            <td><button class='btn-btn warning' id='orderButton' ng-click='checkout(det.productName,quantityOrdered)'>Order <span class="glyphicon glyphicon-shopping-cart"></span></button></td>
+						</tr>
+					</tbody>
+				</table>
+                    <button class='btn btn-success' ng-click="invoiceOpen()" align-text>Invoice</button>
+                      
+                     <p style='color:red;'>Kindly render payment through Cash..due to demonitization card services are strangled!!!!!</p>
+                </div>
+            </div>
+            
+            
+                <!---order display block--->
+                <div class='panel panel-info' ng-style="{'visibility': isInvoiceOpen?'visible':'hidden'}">
+                    <div class='panel-heading'><h3>Order Invoice</h3></div>
+                    <div class='panel-body'>
+                        <table class='table table-stripped'>
+                            <thead>
+                               <th>Product Name</th>
+							   <th>Price</th>
+							   <th>Quantity</th>
+                               <th>Total</th>
+                            </thead>
+                            <tbody>
+                               <tr ng-repeat="final in finalAr">
+                                   <td>{{final.productName}}</td>
+                                    <td>&#x20B9;{{final.price}}</td>
+                                    <td>{{final.quantity}}</td>
+                                    <td>&#x20B9;{{final.quantity*final.price}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p> Total bill: <b>&#x20B9;{{totalPrice}}</b></p><br><br>
+                        <button class='btn btn-warning' ng-click='addressConfirm()'>Confirm Address</button>
+                         <div class='panel panel-warning' ng-style="{'visibility': isAddressOpen?'visible':'hidden'}">
+                            <div class='panel-heading'><h3 class='panel-title'>Shipping Address</h3></div>
+                            
+                            <div class='panel-body'>
+                                <div ng-model="addRess">
+                                    <p>{{addRess.add1}} </p>
+                                    <p>{{addRess.add2}}</p>
+                                    <p>{{addRess.city}}</p>
+                                    <p>{{addRess.state}}</p>
+                                    <p>{{addRess.country}}</p>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                        <p style='color:blue;'>Thankyou for Shopping with MyShoppie......</p>
+                    </div>
+                </div>
+                        
+                       
+				
+			
+		
+	</section> <!--/#cart_items-->
+	
+	
+	
+		
